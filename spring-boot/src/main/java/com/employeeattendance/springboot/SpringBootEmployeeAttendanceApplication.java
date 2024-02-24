@@ -16,28 +16,41 @@ public class SpringBootEmployeeAttendanceApplication implements CommandLineRunne
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
+
 	@Override
 	public void run(String... args) throws Exception {
-		Employee employee1 = new Employee();
-		Employee employee2 = new Employee();
+//		Attendance attendance1=new Attendance();
+//		Employee employee1 = new Employee();
+//		Employee employee2 = new Employee();
+//
+//		User user= new User();
 
-		employee1.setFirst_name("John");
-		employee1.setMiddle_name("Doe");
-		employee1.setLast_name("Smith");
-		employee1.setGender("Male");
-		employee1.setAge(30);
-		employee1.setAddress("123 Main St");
-		employee1.setContact_details("john@example.com");
-		employeeRepository.save(employee1);
 
-		employee2.setFirst_name("Johnny");
-		employee2.setMiddle_name("Do2n");
-		employee2.setLast_name("Smithy");
-		employee2.setGender("Male");
-		employee2.setAge(31);
-		employee2.setAddress("123 Main St");
-		employee2.setContact_details("john@example.com");
-		employeeRepository.save(employee2);
+
+//		user.setName("John Doe");
+//		user.setUsername("johndoe");
+//		user.setEmail("john@example.com");
+//		user.setPassword("password123");
+//		userRepository.save(user);
+
+
+//		employee1.setFirst_name("John");
+//		employee1.setMiddle_name("Doe");
+//		employee1.setLast_name("Smith");
+//		employee1.setGender("Male");
+//		employee1.setAge(30);
+//		employee1.setAddress("123 Main St");
+//		employee1.setContact_details("john@example.com");
+//		employeeRepository.save(employee1);
+
+//		employee2.setFirst_name("Johnny");
+//		employee2.setMiddle_name("Do2n");
+//		employee2.setLast_name("Smithy");
+//		employee2.setGender("Male");
+//		employee2.setAge(31);
+//		employee2.setAddress("123 Main St");
+//		employee2.setContact_details("john@example.com");
+//		employeeRepository.save(employee2);
 
 
 

@@ -5,37 +5,27 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "attendance")
+@Table(name="attendance")
 public class Attendance {
-    public enum AttendanceStatus {
-        CHECK_IN,
-        CHECK_OUT
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "attendance_date",nullable = false)
+    private LocalDate attendance_date;
+    @Column(name = "attendance_time")
+    private LocalTime attendance_time;
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id",nullable = false)
     private Employee employee;
+    @Column(name = "attendance_status",nullable = false)
+    private int attendance_status;
 
-    @Column(name = "attendance_date", nullable = false)
-    private LocalDate attendanceDate;
 
-    @Column(name = "attendance_time", nullable = false)
-    private LocalTime attendanceTime;
-
-    @Column(name = "attendance_status", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private AttendanceStatus attendanceStatus;
 }
