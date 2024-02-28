@@ -19,7 +19,7 @@ public class Attendance {
     private Long id;
     @Column(name = "attendance_date",nullable = false)
     private LocalDate attendance_date;
-    @Column(name = "attendance_time")
+    @Column(name = "attendance_time",nullable = false)
     private LocalTime attendance_time;
     @ManyToOne
     @JoinColumn(name = "employee_id", referencedColumnName = "id",nullable = false)

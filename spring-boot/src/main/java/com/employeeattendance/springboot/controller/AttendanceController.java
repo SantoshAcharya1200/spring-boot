@@ -37,4 +37,36 @@ public class AttendanceController {
                 .orElseThrow(() -> new ResourceNotFoundException("Attendance not found with id:" + id));
         return ResponseEntity.ok(attendance);
     }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Attendance> updateAttendance(@PathVariable long id,@RequestBody Attendance attendanceDetails) {
+        Attendance updateAttendance = attendanceRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
+
+//        updateAttendance.setEmployee_Id(attendanceDetails.getEmployee_Id());
+//        updateAttendance.setAttendance_Date(attendanceDetails.getAttendance_Date());
+//        updateAttendance.setAttendance_Status(attendanceDetails.getAttendance_Status());
+//        updateAttendance.setAttendance_Time(attendanceDetails.getAttendance_Time());
+//        updateAttendance.setAttendance_Date(attendanceDetails.getAttendance_Date());
+//        updateAttendance.setAttendance_Date(attendanceDetails.getAttendance_Date());
+//        updateAttendance.setEmployee(attendanceDetails.getEmployee());
+//        updateAttendance.setAttendanceDate(attendanceDetails.getAttendanceDate());
+//        updateAttendance.setAttendanceStatus(attendanceDetails.getAttendanceStatus());
+//        updateAttendance.setAttendanceTime(attendanceDetails.getAttendanceTime());
+
+        updateAttendance.setEmployee(attendanceDetails.getEmployee());
+        updateAttendance.setAttendance_date(attendanceDetails.getAttendance_date());
+        updateAttendance.setAttendance_status(attendanceDetails.getAttendance_status());
+        updateAttendance.setAttendance_time(attendanceDetails.getAttendance_time());
+
+
+
+        attendanceRepository.save(updateAttendance);
+
+
+
+        return ResponseEntity.ok(updateAttendance);
+    }
+
+
 }
